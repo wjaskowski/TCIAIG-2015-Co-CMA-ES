@@ -15,10 +15,7 @@ import put.ci.cevo.rl.agent.functions.wpc.WPC;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public final class OthelloLeague {
 	private OthelloLeague() {
@@ -88,6 +85,7 @@ public final class OthelloLeague {
 		str = str.replace('{', ' ').replace('}', ' ');
 
 		try (Scanner scanner = new Scanner(str)) {
+			scanner.useLocale(Locale.US);
 			int tuples = scanner.nextInt();
 
 			for (int i = 0; i < tuples; ++i) {
